@@ -1,0 +1,12 @@
+primary key,nick,name,mbox,knows
+1,alice,alice,alice@alice.com,bob
+2,bob,bob,bob@bob.com,charle
+3,charle,charle,charle@charle.com,marcela
+4,ana,ana,ana@ana.com,silvio
+5,marcela,marcela,marcela@marcela.com,mario
+6,silvio,silvio,silvio@silvio.com,anita
+7,joao,joao,joao@joao.com,alice
+8,anita,anita,anita@anita.com,mario
+9,cristina,cristina,crisitina@cristica.com,bob
+10,mario,mario,mario@mario.com,joao
+11,clara,clara,clara@claro.com,ana
