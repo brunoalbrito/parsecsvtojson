@@ -10,14 +10,15 @@ texto = []
 
 with open("example.csv","r") as f:
     spamreader = csv.reader(f, delimiter=',', quotechar='"')
-    spamreader.next()
+    next(spamreader)
     for row in spamreader:
         texto.append(row)
         
     dicionario = {}
     
     for j in range(len(texto)):
-        dicionario[texto[j][1]] = BNode() 
+        print(texto[j][1])
+        dicionario[texto[j][1]] = URIRef("http://example.org/people/%s"%(texto[j][1])) 
         
     
     for i in range(len(texto)):
@@ -29,10 +30,10 @@ with open("example.csv","r") as f:
             if p == texto[i][4]: 
                 g.add( (dicionario[str(texto[i][1])], FOAF.knows, dicionario[p]))
 
-g.serialize(destination='sucesso.json', format='json-ld')
-file = open("sucesso.json", "w")
+g.serialize(destination='example.json', format='json-ld')
+file = open("example.json", "wb")
 file.write(g.serialize(format='json-ld'))
-    
+file.close()
     
 """g.serialize(destination='bruno.rdf', format='application/rdf+xml')
 file = open("bruno.rdf", "w")
